@@ -4,9 +4,17 @@ plugins {
 }
 
 publishing{
+    publications{
+        create<MavenPublication>("maven") {
+            from(components["java"])
+            artifactId = "smart-garden-api"
+            version = "1.0.0"
+        }
+    }
     repositories {
         maven {
-            url =  uri("http://localhost:8081/repository/smart_garden")
+            url =  uri("http://localhost:8081/repository/smart_garden/")
+            isAllowInsecureProtocol = true
             credentials {
                 username = project.findProperty("nexus.name") as String? ?: ""
                 password = project.findProperty("nexus.password") as String? ?: ""
