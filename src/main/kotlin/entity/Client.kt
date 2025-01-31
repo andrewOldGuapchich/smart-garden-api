@@ -7,5 +7,6 @@ data class Client(
 )
 
 data class Product (
-    private val title: String
+    private val title: String,
+    private val price: Double
 )
