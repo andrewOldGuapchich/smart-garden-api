@@ -8,7 +8,7 @@ publishing{
         create<MavenPublication>("maven") {
             from(components["java"])
             artifactId = "smart-garden-api"
-            version = "1.0.0"
+            version = "1.0.2"
         }
     }
     repositories {
